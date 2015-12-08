@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Contact</title>
+		<script src="/socket.io/socket.io.js"></script>
+		
+		<script>
+			var socket = io.connect("http://localhost:8888");
+			var user_id = 0;
+			function send_message(message) {
+				socket.emit("message", user_id, message);
+			}
+
+			function add_message (user_id, message) {
+				var div = document.createElement("div");
+				div.textContent = "user_"+user_id+": " + message;
+
+				messages.appendChild(div);
+			}
+
+			socket.on('user_id', function(id) {
+				user_id = id;
+			});
+			socket.on("message_sent", function(user_id, message) {
+				add_message(user_id, message);
+			});
+
+			window.onload = function() {
+				var message_input = document.getElementById("message");
+				message_input.addEventListener("keydown", function(event) {
+					if(event.keyCode === 13) {
+						var message = message_input.value;
+						message_input.value = "";
+						send_message(message);
+					}
+
+				});
+				document.getElementById("send").addEventListener("click",function(){
+					var message = message_input.value;
+					message_input.value = "";
+					send_message(message);
+				});
+				message_input.focus();
+			};
+			
+		</script>
+		<style>
+			body{
+			    background-color: #FFC82F;
+			}
+			.wrap{width:300px;}
+			.center{
+			 top:50%;
+			 position:relative;
+			 margin:auto;}
+
+			input{
+			      font-family: sans-serif;
+			      box-sizing: border-box;
+			      display: block;
+			      border: none;
+			      padding: 20px;
+			      width: 300px;
+			      height: 100px;
+			      margin-bottom: 20px;
+			      font-size: 18px;
+			      outline: none;
+
+			}
+
+			#send{
+			    width: 300px;
+			    height: 40px;
+			    background-color: #555;
+			    color: #fff;
+			    border: none;
+			    font: sans-serif;
+			    font-size: 18px;
+			}
+
+			h2{
+			    margin-top: 100px;
+			    font-family: sans-serif;
+			    color: #555;
+			    text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="messages" class="wrap center">
+			<h2 > Send Qianxu A Message</h2>
+			<input id = "message" type="text"></input>
+			<button type="button" id="send">Send</button>
+		</div>
+	</body>
+</html>

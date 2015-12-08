@@ -1,0 +1,50 @@
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #FFFAEC;
+}
+
+.flickr-image {
+  width: 24%;
+  margin: 1% 0.5%;
+  height: 300px;
+  display: inline-block;
+  background-position:center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom:-5px;
+  cursor:pointer;
+  position: relative;
+  -webkit-transition: all 2s ease 0s;
+  -moz-transition: all 2s ease 0s;
+  -o-transition: all 2s ease 0s;
+  transition: all 2s ease 0s;
+}
+
+
+.flickr-image:hover {
+  -webkit-transform:scale(1.05);
+  -moz-transform:scale(1.05);
+  -ms-transform:scale(1.05);
+  -o-transform:scale(1.05);
+  transform:scale(1.05);
+}
+
+body h1 {
+  color: #62514F;
+  line-height: 100px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 7vw;
+  margin-bottom: 20px;
+}
+body p{
+  font-family: 'Niconne', Sans-Serif;
+  font-size: 30px;
+  text-align: center;
+  color: #62514F;
+  margin-top: 0px;
+}
+

@@ -1,0 +1,39 @@
+body{
+    background-color: #FFC82F;
+}
+.wrap{width:300px;}
+.center{
+ top:50%;
+ position:relative;
+ margin:auto;}
+
+input{
+      font-family: sans-serif;
+      box-sizing: border-box;
+      display: block;
+      border: none;
+      padding: 20px;
+      width: 300px;
+      height: 100px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      outline: none;
+
+}
+
+#send{
+    width: 300px;
+    height: 40px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    font: sans-serif;
+    font-size: 18px;
+}
+
+h2{
+    margin-top: 100px;
+    font-family: sans-serif;
+    color: #555;
+    text-align: center;
+}
