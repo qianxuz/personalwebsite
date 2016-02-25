@@ -190,8 +190,8 @@ a{
 
 #shanghai{
 	position: absolute;
-	left: 990px;
-	top: 380px;
+	left: 78%;
+	top: 55%;
 }
 
 #shanghai-text{
@@ -204,8 +204,8 @@ a{
 
 #pitts{
 	position: absolute;
-	left: 320px;
-	top: 380px;
+	left: 28%;
+	top: 55%;
 }
 
 #pitts-text{
@@ -218,8 +218,8 @@ a{
 
 #japan{
 	position: absolute;
-	left: 1030px;
-	top: 360px;
+	left: 81%;
+	top: 53%;
 }
 
 #japan-text{
